@@ -69,6 +69,7 @@ class MovieCard extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(width: 10,),
           ],
         ),
       ),
