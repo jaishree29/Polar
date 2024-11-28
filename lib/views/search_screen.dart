@@ -31,11 +31,18 @@ class _SearchScreenState extends State<SearchScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              style: TextStyle(color: Colors.white),
+              cursorColor: Colors.red,
               controller: _searchController,
               decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red
+                  )
+                ),
                 hintText: 'Search movies...',
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(Icons.search, color: Colors.red,),
                   onPressed: _search,
                 ),
               ),
