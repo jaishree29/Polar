@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomNavBar(),
       appBar: AppBar(
-        title: Text('Movies'),
+        title: Text('Polar Movies'),
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         future: controller.fetchAllMovies(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return Center(child: CircularProgressIndicator(color: Colors.red,));
           } else if (snapshot.hasError) {
             return Center(child: Text('Error loading movies'));
           } else {

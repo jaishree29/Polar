@@ -5,12 +5,11 @@ import '../../models/movie_model.dart';
 class MovieCard extends StatelessWidget {
   final Movie movie;
 
-  const MovieCard({Key? key, required this.movie}) : super(key: key);
+  const MovieCard({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
     String cleanSummary(String htmlString) {
-      // Remove HTML tags using RegExp
       return RegExp(r'<[^>]*>').hasMatch(htmlString)
           ? htmlString.replaceAll(RegExp(r'<[^>]*>'), '')
           : htmlString;
@@ -50,16 +49,17 @@ class MovieCard extends StatelessWidget {
                     width: 70,
                     fit: BoxFit.cover,
                   ),
-            SizedBox(width: 16),
+            SizedBox(width: 13),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 4),
                   Text(
                     movie.title,
                     style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 4),
                   Text(
                     cleanSummary(movie.summary),
                     maxLines: 3,

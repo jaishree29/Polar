@@ -41,6 +41,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   )
                 ),
                 hintText: 'Search movies...',
+                hintStyle: TextStyle(color: Colors.grey[700]),
                 suffixIcon: IconButton(
                   icon: Icon(Icons.search, color: Colors.red,),
                   onPressed: _search,
@@ -49,7 +50,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
           ),
           if (_isLoading)
-            Center(child: CircularProgressIndicator())
+            Center(child: CircularProgressIndicator(color: Colors.red,))
           else
             Expanded(
               child: ListView.builder(
