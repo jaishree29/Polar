@@ -55,5 +55,7 @@ Below are screenshots of the app:
    ```bash
    flutter run
 
-## ** Thank You! **
+---
+
+## **Thank You!**
 
